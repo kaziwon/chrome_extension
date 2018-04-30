@@ -1,0 +1,39 @@
+{
+  "name": "Trocar imagem",
+  "version": "1.0",
+  "description": "Troque tudo por alguma imagem",
+  "permissions": ["declarativeContent","storage", "activeTab", "tabs", "<all_urls>",
+    "file://*/*",
+    "http://*/*",
+    "https://*/*"],
+    "web_accessible_resources": [
+      "deFora/jquery-3.3.1.min.js"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["deFora/jquery-3.3.1.min.js","popup.js"]
+    }
+],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "imagens/nicolas_16.png",
+      "32": "imagens/nicolas_32.png",
+      "48": "imagens/nicolas_48.png",
+      "128": "imagens/nicolas_128.png"
+    }
+  },
+  "icons": {
+    "16": "imagens/nicolas_16.png",
+      "32": "imagens/nicolas_32.png",
+      "48": "imagens/nicolas_48.png",
+      "128": "imagens/nicolas_128.png"
+  },
+  "options_page": "",
+  "manifest_version": 2
+}
